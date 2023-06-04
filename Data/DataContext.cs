@@ -1,6 +1,8 @@
 ﻿using DatingAPI.Entities;
 using Microsoft.EntityFrameworkCore;
 
+
+
 namespace DatingAPI.Data
 {
     public class DataContext : DbContext
@@ -8,6 +10,6 @@ namespace DatingAPI.Data
         public DataContext(DbContextOptions options) : base(options)
         {
         }
-        public DbSet <AppUser> Users { get; set; }
+        public DbSet<AppUser> Users { get; set; }
     }
 }
