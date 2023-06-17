@@ -35,7 +35,7 @@ namespace DatingAPI.Controllers
                 PasswordSalt = hmac.Key
             };
 
-            _context.Users.Add(user);  
+            _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
             return new UserDto
@@ -54,7 +54,7 @@ namespace DatingAPI.Controllers
 
             if (user == null) return Unauthorized("invalid username");
 
-            using var hmac = new HMACSHA512(user.PasswordHash);
+            using var hmac = new HMACSHA512(user.PasswordSalt);
 
             var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
 

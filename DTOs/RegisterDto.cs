@@ -11,3 +11,4 @@ namespace DatingAPI.DTOs
         public string Password { get; set; }    
     }
 }
+ 
